@@ -36,6 +36,9 @@ Bug fixes:
 - Stop using ``canSelectDefaultPage`` Python script from CMFPlone.
   [davisagli]
 
+- Adapt tests to the new indexing operations queueing.
+  Part of PLIP 1343: https://github.com/plone/Products.CMFPlone/issues/1343
+  [gforcada]
 
 3.3.2 (2016-11-10)
 ------------------

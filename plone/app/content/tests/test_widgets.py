@@ -14,6 +14,7 @@ from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
 from plone.app.widgets.interfaces import IFieldPermissionChecker
+from Products.CMFCore.indexing import processQueue
 from zope.component import getMultiAdapter
 from zope.component import provideAdapter
 from zope.component import provideUtility
@@ -252,6 +253,7 @@ class BrowserTest(unittest.TestCase):
         self.portal.invokeFactory('Document', id="page", title="page")
         self.portal.page.subject = (test_val,)
         self.portal.page.reindexObject(idxs=['Subject'])
+        processQueue()
 
         self.request.form['name'] = 'plone.app.vocabularies.Keywords'
         results = getMultiAdapter(

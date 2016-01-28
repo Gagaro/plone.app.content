@@ -108,6 +108,8 @@ ObjectManager one.
     >>> 'my-item' in container.objectIds()
     True
     >>> del container['my-item']
+    >>> from Products.CMFCore.indexing import processQueue
+    >>> ignore = processQueue()
     >>> 'my-item' in container
     False
     >>> container._setObject('my-item', item)
